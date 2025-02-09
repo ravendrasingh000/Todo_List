@@ -9,37 +9,40 @@ addBtn.addEventListener("click", ()=> {
     }else{
         const list = document.createElement("li");
         taskList.appendChild(list);
+        list.classList.add("list");
        
 
 // create checkBox
     const checkBox = document.createElement("input");
     checkBox.type = 'checkbox';
     list.appendChild(checkBox);
+    checkBox.classList.add("check-box");
 
     checkBox.addEventListener("change", ()=> {
         if(checkBox.checked){
-            list.classList.add('completed')
+            text.classList.add('completed')
         }else{
-            list.classList.remove('completed');
+            text.classList.remove('completed');
         }
     });
 
 // create span tag for add task 
     const text = document.createElement("span");
     text.innerText = input.value;
+    text.classList.add("span");
     list.appendChild(text);
     input.value = "";
     input.focus();
 
 // crate Edit button
     const editBtn = document.createElement("button");
-    editBtn.classList.add('edit-btn');
-    editBtn.innerText = 'Edit';
+    editBtn.classList.add("fa-solid", "fa-pen-to-square");
     list.appendChild(editBtn);
+    editBtn.classList.add("edit-btn");
 
      editBtn.addEventListener("click", () => {
-            text.contentEditable = true; // Enable editing on span
-            text.focus(); // Focus on text for editing
+            text.contentEditable = true; 
+            text.focus(); 
 
             // Jab user Enter dabaye to editing band ho jaye
      text.addEventListener("keypress", (event) => {
@@ -53,25 +56,13 @@ addBtn.addEventListener("click", ()=> {
 
 // crate delete button
     const delBtn = document.createElement("button");
-    delBtn.classList.add('del-btn');
-    delBtn.innerText = 'Delete';
+    delBtn.classList.add("fa-solid", "fa-trash");
     list.appendChild(delBtn);
+    delBtn.classList.add("del-btn");
 
 delBtn.addEventListener("click", ()=> {
     list.remove();
 })
-
-
-
-
-
-
-
-
-
-
-
-console.log(list);
 
 
 
