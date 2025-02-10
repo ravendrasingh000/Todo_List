@@ -81,6 +81,8 @@ li:nth-child(odd){
     font-size: 20px;
     text-align: left;
     outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
 }
 
 .edit-btn, .del-btn{

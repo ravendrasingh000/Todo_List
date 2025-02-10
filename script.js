@@ -43,12 +43,16 @@ addBtn.addEventListener("click", ()=> {
      editBtn.addEventListener("click", () => {
             text.contentEditable = true; 
             text.focus(); 
+            text.style.backgroundColor = 'black';
+            text.style.color = "white"
 
             // Jab user Enter dabaye to editing band ho jaye
      text.addEventListener("keypress", (event) => {
                 if (event.key === "Enter") {
                     text.contentEditable = false; // Disable editing
                     text.blur(); // Remove focus
+                    text.style.backgroundColor = '';
+                    text.style.color = "";
                 }
             });
         });
@@ -63,10 +67,5 @@ addBtn.addEventListener("click", ()=> {
 delBtn.addEventListener("click", ()=> {
     list.remove();
 })
-
-
-
-
-
     }
 })
